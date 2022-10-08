@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>currency exchange</title>
+  <script>
+   
+
+//     var myHeaders = new Headers();
+// myHeaders.append("apikey", "QSE3WlB2aGlsL7sY9Y17sKnq9CA9xA6K");
+
+// var requestOptions = {
+//   method: 'GET',
+//   redirect: 'follow',
+//   headers: myHeaders,
+// };
+// document.addEventListener('DOMContentLoaded',function(){
+// fetch("https://api.apilayer.com/currency_data/change?start_date=2021-08-23&end_date=2022-09-23", requestOptions)
+//   .then(response => response.json())
+// .then(result => {
+//   const rates=result.
+// }
+
+// // console.log(result['quotes']['USDAED']['change_pct'])
+  
+//   );
+  
+// });
+var myHeaders = new Headers();
+myHeaders.append("apikey", "QSE3WlB2aGlsL7sY9Y17sKnq9CA9xA6K");
+
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow',
+  headers: myHeaders
+};
+document.addEventListener('DOMContentLoaded',function(){
+
+
+  fetch("https://api.apilayer.com/tax_data/canada_rate_list", requestOptions)
+  .then(response => response.json())
+  .then(result =>{
+    let rate=result['data'][0] ['country'];
+   
+    console.log(rate);
+     document.querySelector('h1').innerHTML=rate;
+ let combined =result['data'][0]['combined_rate'];
+    console.log(combined);
+    document.querySelector('h3').innerHTML=combined.toFixed([0]);
+    let start =result['data'][0]['start'];
+    console.log(start);
+    document.querySelector('h2').innerHTML=start;
+
+  });
+  });
+
+
+
+
+
+
+
+  </script>
+</head>
+
+<body>
+  <h3></h3>
+  <h2></h2>
+<h1></h1>
+    
+
+</body
